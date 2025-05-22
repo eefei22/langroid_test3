@@ -1,0 +1,11 @@
+Steps to Replicate:
+- create directory
+- RUN: docker pull langroid/langroid
+- create venv and activate
+- create .env file, add API Keys
+- RUN: pip install langroid
+- RUN: pip install "langroid[doc-chat,db]"
+- create simple app 
+- RUN: 
+    - .\langroid-venv\Scripts\activate
+    - python app/chat.py

@@ -1,0 +1,5 @@
+# Ignore venv and secrets
+langroid-venv/
+.env
+__pycache__/
+*.pyc

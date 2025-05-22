@@ -1,0 +1,7 @@
+ 	Task	Responder	sender_entity	sender_name	recipient	block	tool_type	tool	content
+ 	HelperBot	Entity.USER	Entity.USER			None			
+ 	HelperBot	Entity.USER	Entity.USER	Entity.USER		None			[CANNOT RESPOND]
+ 	HelperBot	Entity.AGENT	Entity.USER			None			
+*	HelperBot	Entity.USER	Entity.USER			None			my boy friend just broke up with me
+ 	HelperBot	Entity.AGENT	Entity.USER			None			
+*	HelperBot	Entity.USER	Entity.USER			None			q
