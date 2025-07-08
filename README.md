@@ -39,7 +39,7 @@ docker pull langroid/langroid
 ### 3. Create and activate a virtual environment
 ```bash
 python -m venv langroid-venv
-.\langroid-venv\Scriptsctivate
+.\langroid-venv\Scripts\Activate.ps1
 ```
 
 ### 4. Create a `.env` file with your API key
@@ -85,7 +85,6 @@ task.run()
 ## 🧪 Run Your App
 
 ```bash
-.\langroid-venv\Scriptsctivate
 python app/chat.py
 ```
 
