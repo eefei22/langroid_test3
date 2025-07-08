@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Well-Bot Journal</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      background: #f7f7f7;
+    }
+    #status {
+      font-size: 1.2rem;
+      color: green;
+    }
+    #transcript {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      min-height: 100px;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎙️ Well-Bot Voice Journal</h1>
+  <p id="status">Idle</p>
+  <div id="transcript">Transcript will appear here...</div>
+  <button onclick="startMic()">Start Listening</button>
+
+  <script>
+    let socket;
+    let mediaStream;
+    let audioContext;
+    let processor;
+    let source;
+
+    async function startMic() {
+      document.getElementById("status").innerText = "🟢 Listening…";
+
+      // Connect to WebSocket
+      socket = new WebSocket("ws://localhost:8000/ws/journal");
+
+      socket.onopen = () => {console.log("WebSocket connected");};
+
+      socket.onmessage = (event) => {
+        console.log("📨 Received transcript:", event.data);
+        document.getElementById("transcript").innerText = event.data;
+      };
+
+      // Setup mic stream
+      mediaStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      source = audioContext.createMediaStreamSource(mediaStream);
+
+      processor = audioContext.createScriptProcessor(1024, 1, 1);
+      source.connect(processor);
+      processor.connect(audioContext.destination);
+
+      processor.onaudioprocess = (e) => {
+        const inputData = e.inputBuffer.getChannelData(0);
+        const int16 = convertFloat32ToInt16(inputData);
+        if (socket.readyState === WebSocket.OPEN) {
+            console.log("Sending audio chunk:", int16.byteLength);
+            socket.send(int16);
+        }
+      };
+    }
+
+    function convertFloat32ToInt16(buffer) {
+      let l = buffer.length;
+      const result = new Int16Array(l);
+      for (let i = 0; i < l; i++) {
+        result[i] = Math.min(1, buffer[i]) * 0x7FFF;
+      }
+      return new Int16Array(result).buffer;
+    }
+  </script>
+</body>
+</html>

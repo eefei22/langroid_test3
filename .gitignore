@@ -1,5 +1,21 @@
 # Ignore venv and secrets
 langroid-venv/
 .env
-__pycache__/
 *.pyc
+.vscode
+
+/data/audio_raw/
+/data/features/
+/z.Archives/
+/.secrets/
+__pycache__/
+*.py[cod]
+*.so
+*.pkl
+*.env
+
+
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

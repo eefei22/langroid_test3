@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+langroid
+pyaudio
+faster-whisper
+numpy
+motor
+python-dotenv
