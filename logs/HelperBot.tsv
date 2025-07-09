@@ -2,5 +2,16 @@
  	HelperBot	Entity.USER	Entity.USER			None			
  	HelperBot	Entity.USER	Entity.USER	Entity.USER		None			[CANNOT RESPOND]
  	HelperBot	Entity.AGENT	Entity.USER			None			
-*	HelperBot	Entity.LLM	Entity.LLM			None			It seems like you're referring to "above instructions," but I don't see any prev...ke assistance with. - Ask a specific question. Let me know how I can assist you!
-*	HelperBot	Entity.USER	Entity.USER			None			x
+*	HelperBot	Entity.LLM	Entity.LLM			None			Could you clarify what you'd like me to do? For example, are you asking me to re...ke me to perform using one of the available tools? Let me know how I can assist!
+*	HelperBot	Entity.USER	Entity.USER			None			Please record_audio(duration=3) a short audio clip.
+ 	HelperBot	Entity.AGENT	Entity.USER			None			
+*	HelperBot	Entity.LLM	Entity.LLM			None	TOOL	record_audio	```json { "request": "record_audio", "duration": 3.0, "samplerate": 44100, "channels": 1 } ```
+*	HelperBot	Entity.AGENT	Entity.AGENT	HelperBot		None			.logs/recordings\20250709_160156.wav
+*	HelperBot	Entity.USER	Entity.USER			None			Please a short audio clip for 20 seconds
+ 	HelperBot	Entity.AGENT	Entity.USER			None			
+*	HelperBot	Entity.LLM	Entity.LLM			None	TOOL	record_audio	```json { "request": "record_audio", "duration": 20.0, "samplerate": 44100, "channels": 1 } ```
+*	HelperBot	Entity.AGENT	Entity.AGENT	HelperBot		None			.logs/recordings\20250709_160243.wav
+*	HelperBot	Entity.USER	Entity.USER			None			record a journal for me, 10 seconds
+ 	HelperBot	Entity.AGENT	Entity.USER			None			
+*	HelperBot	Entity.LLM	Entity.LLM			None	TOOL	record_audio	```json { "request": "record_audio", "duration": 10.0, "samplerate": 44100, "cha...recording. Let me know if you'd like me to transcribe or summarize it afterward!
+*	HelperBot	Entity.AGENT	Entity.AGENT	HelperBot		None			.logs/recordings\20250709_160506.wav

@@ -1,7 +1,0 @@
- 	Task	Responder	sender_entity	sender_name	recipient	block	tool_type	tool	content
- 	WellBot	Entity.USER	Entity.USER	WellBot		None			Hi Well-Bot
- 	WellBot	Entity.USER	Entity.USER	Entity.USER		None			[CANNOT RESPOND]
- 	WellBot	Entity.AGENT	Entity.USER			None			
-*	WellBot	Entity.USER	Entity.USER			None			tell me a funny joke in 4 words
- 	WellBot	Entity.AGENT	Entity.USER			None			
-*	WellBot	Entity.USER	Entity.USER			None			x
