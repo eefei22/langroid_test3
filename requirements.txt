@@ -6,3 +6,5 @@ faster-whisper
 numpy
 motor
 python-dotenv
+sounddevice
+soundfile
