@@ -85,7 +85,7 @@ task.run()
 ## 🧪 Run Your App
 
 ```bash
-.\langroid-venv\Scripts\Activate.ps1
+.\langroid-venv\Scriptsctivate
 python app/chat.py
 ```
 
